@@ -1,0 +1,33 @@
+﻿<Window x:Class="ValhallaCrashReporter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ValhallaCrashReporter"
+        mc:Ignorable="d"
+        Title="Valhalla Crash Reporter" Height="450" Width="800">
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock TextAlignment="Center" Grid.Row="0">We noticed a crash, so there seems to be some room for improvement! <LineBreak /> Here is a text box where you can yell at us or describe what you did to cause the crash, whichever you prefer:</TextBlock>
+        <TextBox Grid.Row="1" Name="Description" AcceptsReturn="True" TextWrapping="Wrap" />
+        <TextBlock Grid.Row="2" TextAlignment="Center">By pressing submit we do collect some info about the crash that might contain user info such as computer name etc. 
+            <LineBreak />
+            All data that we collect can be found in this folder:</TextBlock>
+        <Label MouseDown="CrashPath_MouseDown" Name="CrashPath" Grid.Row="3" HorizontalAlignment="Center">PLACEHOLDER PATH</Label>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Name="SubmitButton" Grid.Column="0" Click="SubmitClick">Submit and Close</Button>
+            <Button Name="CancelButton" Grid.Column="2" Click="CancelClick">Cancel</Button>
+        </Grid>
+    </Grid>
+</Window>
